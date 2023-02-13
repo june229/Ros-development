@@ -24,3 +24,40 @@ this is first edit3
   * ros2 service call /spawn turtlesim/srv/Spawn "{x: 5.5, y: 9, theta: 1.57, name: 'turtle2'}"
   # I can make service2 to control another turtlebot
 ```
+
+# 개념정리
+
+- .json파일 만들기 : 원하는 폴더 내의 터미널 창에 'touch settings.json'이라고 입력한다.
+
+- 파일 안에는 숨김파일이라는 항목이 존재한다. 체크해주면 .bashrc 등의 파일이 나타난다.
+
+- Terminator 사용법 - Ctrl + shift +
+e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙여넣기
+
+    Alt + 방향키 : 터미널 이동
+
+- 명령어 힌트 찾기 : ros2 run turtlesim ~~~ ----> Tap키를 두 번 누른다.
+
+- VisualStudio Code, Github와 연동하기 : git config --global user.email "    "
+
+    git config --global user.name"    "
+
+- 수정 개념 : commit(문서 상 수정), push(git으로 전송), pull(git에서 pc로 불러오기)
+
+- cat : cat memoji - 파일 안의 내용 보기
+
+- home 표현 : ~/.
+
+- alias : alias testpub = ros2 run ~~~ // ros2 run 이하의 명령어를 testpub으로 단축
+
+- 노드 이름 바꾸기 : ros2 run turtlesim turtlesim_node --ros -args -remap -node :=이름
+
+    //그냥 실행하면 turtlesim이라는 이름으로 생성. 그러므로 여러대 동작시 이름 변경 필요
+
+- 실행은 run
+
+- 거북이 2마리 따로 조종시 서비스 이름 바꾸기
+
+- rqt 모니터, rqt service caller 등 사용
+
+- 노드 정보 확인 : ros2 node info/이름
