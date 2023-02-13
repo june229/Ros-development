@@ -76,3 +76,5 @@ e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙�
 
 
 - ros의 단위는 m 이다.
+
+- https://freshmea.notion.site/freshmea/ROS2-5a5303ac2160454885498a52dfce26c4
