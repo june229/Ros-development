@@ -61,3 +61,18 @@ e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙�
 - rqt 모니터, rqt service caller 등 사용
 
 - 노드 정보 확인 : ros2 node info/이름
+
+- 파라미터 불러오기 및 설정 : ros2 param get /turtlesim background_r
+//불러오기
+
+  ros2 param set /turtlesim background_r//설정
+
+  저장 : ros2 param dump /turtlesim ---->.yaml 형태로 저장
+  ---->이를 확인하기 위해서는 cat turtlesim.yaml
+
+  저장 파일 불러오기 : ros2 param load /turtlesim ./ turtlesim.yaml // turtlesim에 turtlesim.yaml의 정보를 불러온다.
+
+  저장된 것을 바로 적용하여 실행 : ros2 run turtlesim turtlesim_node --ros-args --params-file ./turtlesim.yaml
+
+
+- ros의 단위는 m 이다.
