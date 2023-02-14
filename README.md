@@ -115,6 +115,9 @@ e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙�
 - Publisher : class 이름 설정, topic 이름 설정, 통신하는 message 이름 설정, 내용을 publish로 설정
 - Subscriber : 주고 받을 message 이름 동일화 그리고 내용을 subscribe로 설정
 
+# launch
+- run을 거의 사용하지 않고 대부분 launch를 사용한다. node를 하나하나 사용하지 않고 launch에 묶어서 여러 노드를 사용한다.
+
 # 기타 수정사항
 - 코드가 주고 받는 내용의 변수명을 꼭 제대로 확인한다.
 - 파일을 실행시킬 때는 저장 후 사용한다.
