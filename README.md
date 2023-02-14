@@ -76,7 +76,7 @@ e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙�
 
 
 - ros의 단위는 m 이다.
-
+- https://github.com/freshmea
 - https://freshmea.notion.site/freshmea/ROS2-5a5303ac2160454885498a52dfce26c4
 #
 #
@@ -96,3 +96,25 @@ e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙�
   빌드타입, 사용하는 파이썬, 패키지 이름
 
 - 빌드는 'colcon build'라고 쓴다.
+
+# pkg 파일 생성
+- robot_ws에서 src에 다음과 같은 명령어를 입력한다. 'ros2 pkg create --build-type ament_python my_package'
+
+# class
+- class M_turtle(Node): #상속을 받기위해 가로 안에 부모 class를 작성한다.
+  def __init__(self): #상속을 하기 위해서는 이를 작성해야 한다.
+    super().__init__('move_turtle') # mpub는 토픽의 이름을 설정한 것이다.
+    self.qos = QoSProfile(depth = 10)
+    self.pub = self.create_publisher(Twist, 'turtle1/cmd_vel', self.qos) #message는 통신하는 토픽의 이름으로 pub과 sub의 내용이 동일하다.
+
+
+# Publisher와 Subscriber
+- 노드 등록 하는 방법 설명 : setup.py 수정 'mp = my_package.mpub:main'
+- mpub.py, msub.py
+- mpub.py 이용하여 터틀심 조종하기
+- Publisher : class 이름 설정, topic 이름 설정, 통신하는 message 이름 설정, 내용을 publish로 설정
+- Subscriber : 주고 받을 message 이름 동일화 그리고 내용을 subscribe로 설정
+
+# 기타 수정사항
+- 코드가 주고 받는 내용의 변수명을 꼭 제대로 확인한다.
+- 파일을 실행시킬 때는 저장 후 사용한다.
