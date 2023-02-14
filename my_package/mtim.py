@@ -10,7 +10,7 @@ class M_tim(Node): #상속을 받기위해 가로 안에 부모 class를 작성�
     self.sub = self.create_subscription(String, 'message2', self.messagesub, self.qos)
 
   def messagesub(self, msg): # class 안에서 함수를 정의할 때는 'self' 인자를 주어야 한다.
-    self.get_logger().info(msg.data)
+    self.get_logger().info(f'{msg.data}')
 
 def main():
   rclpy.init() # ros middleware(DDS전체)를 불러온다.
