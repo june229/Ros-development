@@ -9,6 +9,7 @@ def main():
   a = 10 #중괄호를 사용하지 않기 때문에 띄어쓰기 중요.
   a = 'hello'
   ob = Test()
+
   ob.aa()
   ob.aa()
 
