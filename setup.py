@@ -3,7 +3,7 @@ import os
 import glob
 
 package_name = 'my_package'
-package_name = 'topic_service_action_rclpy_example'
+#package_name = 'topic_service_action_rclpy_example'
 share_dir = 'share/' + package_name
 
 setup(
@@ -31,8 +31,7 @@ setup(
             'ms = my_package.msub:main',
             'mt = my_package.mtim:main',
             'moveturtle = my_package.move_turtle:main',
-            'moveturtle2 = my_package.move_turtle2:main',
-            'movestar = my_package.move_star:main'
+            'moveturtle2 = my_package.move_turtle2:main'
         ],
     },
 )

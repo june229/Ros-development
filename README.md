@@ -121,3 +121,59 @@ e : 좌우 분할, w : 터미널 닫기, o : 상하 분할, c : 복사, v : 붙�
 # 기타 수정사항
 - 코드가 주고 받는 내용의 변수명을 꼭 제대로 확인한다.
 - 파일을 실행시킬 때는 저장 후 사용한다.
+
+# 2023.02.15
+- 군집을 위해 드론에 부착해야 하는 작은 컴퓨터 : STM32, ESP32 -->microros(아두이노와 유사)를 사용
+
+  --> ros middleware(rmw)는 라즈베리파이 같은 고사양 컴퓨터에서 사용되는데 센서의 정보를 토픽으로 보내기 위해 OpenCV 등과 같은 소형 컴퓨터에 rmw의 중요사항만 뽑아낸 microros를 설치하여 rmw에 토픽 메시지를 보낸다.
+
+  이와 같은 형태는 모든 형태의 드론에 적용된다. 센서 같은 정보는 작은 컴퓨터(OpenCV)에, 통신과 같은 주요 작업은 메인 컴퓨터(라즈베리파이 등)에서 사용한다.
+
+    또한 드론은 라즈베리파이 대신 노트북을 사용한다.
+
+- SD카드 설정 : 우분투는 두 가지 유형이 있다. GUI버전과 Text버전이 있다.(Desktop, Server)
+
+  로봇에는 Text버전(Server)을 사용한다.
+
+- 로봇 조작 위한 pc 설정
+
+  ROS 의 설치는 이미 되어 있으므로 turtlebot3 에 관련된 설치 파일만을 진행 한다.
+
+- 가제보는 ROS2에서 제공하는 시뮬레이션 모듈이다. 매우 유용한 기능이 많으므로 사용법을 숙지해 두는게 좋고 로봇 시뮬레이션을 사용하기 위해서는 URDF 작성법도 같이 익혀 두는게 좋다.
+
+```bash
+sudo apt-get install ros-foxy-gazebo-*
+```
+
+- 카토그래퍼는 ROS2에서 지원하는 SLAM 의 하나로 터틀봇3 에서는 라이다 센서 를 기반으로 지도를 제작하게 된다.
+
+```bash
+sudo apt install ros-foxy-cartographer
+sudo apt install ros-foxy-cartographer-ros
+```
+
+- 제작한 지도를 바탕으로 터틀봇을 움직이기 위해 설치하는 모듈이다. BT(behavior Tree )를 기반으로 잘 짜여진 네비게이션 모듈이다.
+
+```bash
+sudo apt install ros-foxy-navigation2
+sudo apt install ros-foxy-nav2-bringup
+```
+
+- 터틀봇을 구동하기 위해 필요한 패키지들을 설치한다. 데비안 패키지 형식의 터틀봇3 와 터틀봇3 메시지 그리고 다이나믹셀 sdk 를 설치한다.
+
+```bash
+source ~/.bashrc
+sudo apt install ros-foxy-dynamixel-sdk
+sudo apt install ros-foxy-turtlebot3-msgs
+sudo apt install ros-foxy-turtlebot3
+```
+
+1. 터틀봇3 도메인 아이디를 설정한다.( .bashrc 파일을 에디터로 열어서 중복되지 않게 설정을 확인한다.)
+
+  ```bash
+  echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc$ source ~/.bashrc
+  ```
+
+
+# sd카드 설정
+- 디스크에 들어가 sd카드를 선택하고 우측 상단에 점 3개를 눌로 디스크 이미지 복구, 이후 다운 받은 Server파일을 선택하여 복구를 시작한다.
