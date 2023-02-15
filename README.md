@@ -177,3 +177,39 @@ sudo apt install ros-foxy-turtlebot3
 
 # sd카드 설정
 - 디스크에 들어가 sd카드를 선택하고 우측 상단에 점 3개를 눌로 디스크 이미지 복구, 이후 다운 받은 Server파일을 선택하여 복구를 시작한다.
+
+    이후 ros를 설치하여 용도에 맞게 Robot을 조작할 수 있도록 구성한다.
+
+# wifi 설정
+- 터미널에 'sudo nano 50-cloud-init.yaml'을 입력하여 설정한다.
+
+  이후 파일이 있는 폴더(etc/netplain)에서 와이파이 아이디(제목)와 비밀번호를 설정하고 sd카드를 로봇에 장착한다.
+
+- GCS와 Robot의 ip확인.
+
+  ifconfig를 터미널에 입력하면 와이파이에 연결된 노트북의 ip번호를 확인할 수 있다.
+
+  Robot의 ip를 확인하기 위해서는 192.168.0.1을 통해 연결된 Robot의 ip를 확인한다.
+
+- ip를 통한 Robot조작 : 터미널에 'ssh ubuntu@로봇ip'를 입력하여 연결시킨다.
+
+  터미널을 통해 Robot과 연결되면 터미널에서 Robot의 터미널을 조작할 수 있다.
+
+  sudo nano .bashrc에서 도메인 id를 설정할 수 있다.(다중 접속시 따로 조종 위해)
+
+  GCS의 .bashrc로 들어가 도메인 id를 동일화 한다.
+
+  또한 source .bashrc를 robot 터미널에 입력한다.
+
+- turtlebot 모델 설정
+
+  export TURTLEBOT3_MODEL=burger
+
+- Turtlebot 설정
+
+  ros2 launch turtlebot3_bringup robot.launch.py
+
+
+- 통신 확인 : 'ros2 topic list'
+
+- 키보드로 조작 : 'ros2 run turtlebot3_teleop  teleop_keyboard'
