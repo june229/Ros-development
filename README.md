@@ -213,3 +213,26 @@ sudo apt install ros-foxy-turtlebot3
 - 통신 확인 : 'ros2 topic list'
 
 - 키보드로 조작 : 'ros2 run turtlebot3_teleop  teleop_keyboard'
+
+- move_turtle을 통한 turtlebot 제어
+
+# 2023.02.16
+
+- turtlebot 움직임의 상호작용 : 위치 정보를 위해 imu, odom이라는 토픽을 사용한다.
+
+  처음 실행이 되는 장소는 x, y,가 0에서 시작한다.
+
+IMU : 각속도에 의한 계산값
+
+ODOM : 이동한 바퀴에 의한 계산값.
+
+        둘 중에 원하는 값을 사용함.
+
+
+- SLAM : 실제지도, 실제 상황을 만든다. 즉, 특정한 상황만이 아닌 실제 상황을 반영한다.
+  - 사용할 SLAM : cartographer
+
+# Lidar 사용하기
+- 시뮬레이션을 킨 후에 cartographer를 실행시키는 launch파일을 통해 rviz로 turtlebot의 상황을 파악한다.('ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True'-launch 파일 내 노드 분석하기!!)-https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/
+
+- 지도 완성 후 navigating 하기 : 'ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=$HOME/map.yaml'
