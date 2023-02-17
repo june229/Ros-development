@@ -242,3 +242,7 @@ ODOM : 이동한 바퀴에 의한 계산값.
 - usb를 꽂고 확인하기 위해서는 터미널 창에 'ls /dev'를 입력한다. 그러면 인식된 usb를 확인할 수 있다.
 
 - 8-5-3. Turtlebot3_manipulation 을 이용한 연결 : turtlebot을 통해 그리퍼를 조종가능
+
+- 상황에 따른 자동 손 조작 : opencv
+
+- Moveit : moveit 2 foxy 홈페이지.

@@ -33,7 +33,8 @@ setup(
             'moveturtle = my_package.move_turtle:main',
             'moveturtle2 = my_package.move_turtle2:main',
             'real_turtle = my_package.real_turtle:main',
-            'moveturtle_copy = my_package.copy:main'
+            'moveturtle_copy = my_package.copy:main',
+            'movearm = my_package.move_arm:main'
 
         ],
     },
