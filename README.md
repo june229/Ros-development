@@ -236,3 +236,9 @@ ODOM : 이동한 바퀴에 의한 계산값.
 - 시뮬레이션을 킨 후에 cartographer를 실행시키는 launch파일을 통해 rviz로 turtlebot의 상황을 파악한다.('ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True'-launch 파일 내 노드 분석하기!!)-https://emanual.robotis.com/docs/en/platform/turtlebot3/slam_simulation/
 
 - 지도 완성 후 navigating 하기 : 'ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=$HOME/map.yaml'
+
+# 2023.02.17
+
+- usb를 꽂고 확인하기 위해서는 터미널 창에 'ls /dev'를 입력한다. 그러면 인식된 usb를 확인할 수 있다.
+
+- 8-5-3. Turtlebot3_manipulation 을 이용한 연결 : turtlebot을 통해 그리퍼를 조종가능
